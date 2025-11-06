@@ -1,17 +1,11 @@
-const express =require('express')
-const app=express();
-const cors=require('cors')
+const express = require('express')
+const app = express();
+const cors = require('cors')
 
 app.use(cors());
 app.use(express.json());
-
 
 const fetch = require('node-fetch');
-
-app.use(cors());
-app.use(express.json());
-
-
 
 const exchangeRates = {
     USD: 83,
@@ -50,8 +44,6 @@ app.get('/api/weather', async (req, res) => {
     }
 });
 
-// Get available cities
-
 // Currency conversion endpoint
 app.get('/api/currency', (req, res) => {
     const amount = parseFloat(req.query.amount);
@@ -89,5 +81,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
-
-
