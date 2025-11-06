@@ -8,6 +8,7 @@ const Currency = () => {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   const handleConvert = async () => {
     if (!amount || isNaN(amount)) {
@@ -19,7 +20,7 @@ const Currency = () => {
     setError(null);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/currency?amount=${amount}`);
+  const response = await fetch(`${API_BASE}/api/currency?amount=${amount}`);
       const data = await response.json();
       console.log(data);
       if (!response.ok) {
