@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# Frontend local git backup
+frontend/.git_backup/
+
+# Build output
+frontend/build/
+
+# OS files
+.DS_Store
+Thumbs.db
